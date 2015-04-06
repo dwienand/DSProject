@@ -29,7 +29,7 @@ type InitiateProvideController struct {
 }
 
 func (c *InitiateProvideController) Get() {
-	c.TplNames = "asd.html"
+	c.TplNames = "InitialProvider.tpl"
 }
 
 //SubmitRequestController
