@@ -29,5 +29,17 @@ type InitiateProvideController struct {
 }
 
 func (c *InitiateProvideController) Get() {
-	c.TplNames = "InitialProvider.tpl"
+	c.TplNames = "asd.html"
+}
+
+//SubmitRequestController
+type SubmitRequestController struct {
+	beego.Controller
+}
+
+func (c *SubmitRequestController) Post() {
+	c.Data["Service"] = c.GetString("Service")
+	c.Data["Latitude"] = c.Input().Get("Latitude")
+	c.Data["Longitude"] = c.Input().Get("Longitude")
+	c.TplNames = "RequestSubmitted.tpl"
 }
