@@ -37,7 +37,7 @@ func (this *LoginController) Register() {
 		}
 	} else {
 		o := orm.NewOrm()
-		// o.Using("default")
+		o.Using("default")
 		user := models.User{Username: username, Password:password}
 		fmt.Printf(user.Username)
 		id, err := o.Insert(&user)
