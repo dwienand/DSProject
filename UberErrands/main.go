@@ -9,7 +9,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 func init() {
-	orm.RegisterDataBase("default", "mysql", "dsteam:@(127.0.0.1:3306)/UberErrands")
+	orm.RegisterDataBase("default", "mysql", "root:@(127.0.0.1:3306)/UberErrands")
 
 }
 func main() {
