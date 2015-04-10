@@ -19,11 +19,6 @@ function showPosition(position) {
 }
 
 function initialize() {
-     var others = [
-        ['shit1', 40.4349259, -79.9856424, 3, "To 1234 Street, Boston: 10:00am, 12/12/2015"],
-        ['shit2', 40.4379258, -79.9156423, 2, "To 5678 Street, Phidaphia: 11:00am, 12/12/2015"],
-        ['shit3', 40.4319255, -79.9256421, 1, "To 0123 Street, Pittsburgh: 1:00pm, 04/01/2015"]
-    ];
     console.log("initialize map")   
     var lat = document.getElementById("lat").innerHTML;
     var lon = document.getElementById("lon").innerHTML; 
