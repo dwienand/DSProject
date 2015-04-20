@@ -43,3 +43,16 @@ func (c *SubmitRequestController) Post() {
 	c.Data["Longitude"] = c.Input().Get("Longitude")
 	c.TplNames = "RequestSubmitted.tpl"
 }
+
+//AddRequestController
+type AddRequestController struct {
+        beego.Controller
+}
+
+func (c *AddRequestController) Post() {
+	c.Data["Username"] = c.GetString("Username")
+        c.Data["Service"] = c.GetString("Service")
+        c.Data["Latitude"] = c.Input().Get("Latitude")
+        c.Data["Longitude"] = c.Input().Get("Longitude")
+        c.TplNames = "AddSubmitted.tpl"
+}
