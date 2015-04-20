@@ -11,8 +11,8 @@
   </head>
   <body>
     <img src="static/img/UfE.png"><br>
-    <div>Name: {{.Username}} </div><br>
-    <div>Service: {{.Service}} </div><br>
+    <div>Name: {{.Username}} </div>
+    <div>Service: {{.Service}} </div>
     Latitude:
     <span id="lat">{{.Latitude}}</span><br>
     Longitude:
