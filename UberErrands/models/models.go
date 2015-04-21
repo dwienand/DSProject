@@ -15,6 +15,16 @@ type User struct {
 	// Rands      string    `orm:"size(10)"`
 }
 
+type Provider struct {
+        Id         int       `orm:"column(id);auto"`
+        Username   string    `orm:"column(username);size(50)"`
+        Service    string    `orm:"column(service);size(50)"`
+        Lat	   float64   `orm:"column(lat);size(10)"`
+        Long	   float64   `orm:"column(lng);size(10)"`
+        Available  bool      `orm:"column(available)"`
+}
+
 func init() {
 	orm.RegisterModel(new(User))
+	orm.RegisterModel(new(Provider))
 }

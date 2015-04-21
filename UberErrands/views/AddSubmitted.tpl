@@ -17,6 +17,7 @@
     <span id="lat">{{.Latitude}}</span><br>
     Longitude:
     <span id="lon">{{.Longitude}}</span><br>
+    <div>Available: {{.Available}} </div>
     <div id="googleMap" style="width:500px;height:380px;"></div>
 
   </body>
