@@ -47,6 +47,20 @@ func (c *SubmitRequestController) Post() {
 	c.Data["Service"] = c.GetString("Service")
 	c.Data["Latitude"] = c.Input().Get("Latitude")
 	c.Data["Longitude"] = c.Input().Get("Longitude")
+	
+	service := c.Data["Service"].(string)
+        latitudestr := c.Data["Latitude"].(string)
+        latitude, err := strconv.ParseFloat(latitudestr,64)
+        longitudestr := c.Data["Longitude"].(string)
+        longitude, err := strconv.ParseFloat(longitudestr,64)
+
+	o := orm.NewOrm()
+	var user string
+	err = o.Raw("select username from provider where service=?",service).QueryRow(&user)
+	fmt.Println("user: ", user, latitude, longitude, err)
+
+	
+	
 	c.TplNames = "RequestSubmitted.tpl"
 }
 
