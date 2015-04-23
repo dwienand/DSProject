@@ -122,14 +122,13 @@ type MyRequestorController struct {
 }
 
 func (c *MyRequestorController) Get() {
-	selected bool := false
-	if selected {
-		//todo
-
+	var selected bool
+	selected = false
+	if (selected) {
+		fmt.Println(selected)
 	}
 	else
 	{
-
 		c.TplNames = "NotSelectedyet.tpl"
 		
 	}
