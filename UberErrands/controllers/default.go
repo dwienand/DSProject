@@ -122,9 +122,8 @@ type MyRequestorController struct {
 }
 
 func (c *MyRequestorController) Get() {
-	selected bool = false;
-	if selected
-	{
+	selected bool := false
+	if selected {
 		//todo
 
 	}
