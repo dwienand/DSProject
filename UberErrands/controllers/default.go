@@ -126,8 +126,7 @@ func (c *MyRequestorController) Get() {
 	selected = false
 	if (selected) {
 		fmt.Println(selected)
-	}
-	else {
+	} else {
 		c.TplNames = "NotSelectedyet.tpl"
 		
 	}
