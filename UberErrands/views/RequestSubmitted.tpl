@@ -17,6 +17,9 @@
     Longitude:
     <span id="lon">{{.Longitude}}</span><br>
     <div id="googleMap" style="width:500px;height:380px;"></div>
+<div> You will be serviced by: {{.Provider}}. He's at {{.LatitudeP}}, {{.LongitudeP}} </div>
 
   </body>
 </html>
+
+

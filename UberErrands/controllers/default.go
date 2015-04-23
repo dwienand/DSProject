@@ -56,10 +56,14 @@ func (c *SubmitRequestController) Post() {
 
 	o := orm.NewOrm()
 	var user string
-	err = o.Raw("select username from provider where service=?",service).QueryRow(&user)
-	fmt.Println("user: ", user, latitude, longitude, err)
-
+	var nearlat float64
+	var nearlng float64
+	err = o.Raw("select username,lat,lng from (select username, lat, lng, SQRT(POW(69.1*(lat - ?), 2) + POW(69.1 * ( ? -lng) * COS(lat / 57.3), 2)) AS distance FROM provider where service=? HAVING distance < 25 ORDER BY distance) as t", latitude, longitude, service).QueryRow(&user, &nearlat, &nearlng)
+	fmt.Println("user: ", user, nearlng, nearlat, err) 
 	
+	c.Data["Provider"] = user
+        c.Data["LatitudeP"] = nearlat
+        c.Data["LongitudeP"] = nearlng
 	
 	c.TplNames = "RequestSubmitted.tpl"
 }
