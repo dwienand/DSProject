@@ -13,4 +13,5 @@ func init() {
 	beego.Router("/initiateProvide", &controllers.InitiateProvideController{})
 	beego.Router("submitRequest", &controllers.SubmitRequestController{})
 	beego.Router("submitAdd", &controllers.AddRequestController{})
+	beego.Router("myRequestor", &controllers.MyRequestorController{})
 }

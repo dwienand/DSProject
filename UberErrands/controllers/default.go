@@ -115,3 +115,25 @@ func (c *AddRequestController) Post() {
 
         c.TplNames = "AddSubmitted.tpl"
 }
+
+
+type MyRequestorController struct {
+	beego.Controller
+}
+
+func (c *MyRequestorController) Get() {
+	selected bool = false;
+	if selected
+	{
+		//todo
+
+	}
+	else
+	{
+
+		c.TplNames = "NotSelectedyet.tpl"
+		
+	}
+
+}
+
