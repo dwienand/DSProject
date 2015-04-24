@@ -12,7 +12,7 @@
   </head>
   <body>
     <img src="static/img/UfE.png"><br>
-    <div>Hi, <span> id="username">{{.Username}}</span> </div>
+    <div>Hi, <span id="uniquename">{{.Username}}</span> </div>
     <div>You have registered for providing this service : {{.Service}} </div>
 
      <div id = "selectedOrNot"> </div>

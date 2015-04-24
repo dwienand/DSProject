@@ -120,14 +120,16 @@ type MyRequestorController struct {
 
 func (c *MyRequestorController) Get() {
 	var selected bool
-	c.Data["Username"] = c.GetString("Username")
+	username := c.GetString("Username")
+	c.Data["Username"] = username
+	
 	//Check ORM to find if you've been selected
 	selected = false
 	if selected {
 		fmt.Println(selected)
 	} else {
 		c.TplNames = "NotSelectedyet.tpl"
-
+		fmt.Println(username)  
 	}
 
 }

@@ -8,9 +8,9 @@ function sendRequest() {
     } else {
         req = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    var username = getElementById("username").text();
-    console.log(username);
-    req.open("GET", "myRequestor", false);
+    var uname = document.getElementById("uniquename").innerHTML;
+    console.log(uname);
+    req.open("GET", "myRequestor?Username="+uname, false);
     req.send(); 
     document.getElementById("selectedOrNot").innerHTML=req.responseText;
     
