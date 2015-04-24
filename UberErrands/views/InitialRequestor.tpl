@@ -9,6 +9,8 @@
   	<p> Hi, What do you want to request : </p>
 
 	<form id="requestForm" name="requestForm" method="post" action="submitRequest">
+		Name: <input type="text" name="Requester">
+                <br>
 		<select name="Service">
 			<option value="Mow Lawn">Mow Lawn</option>
 			<option value="Clean Dishes">Clean Dishes</option>

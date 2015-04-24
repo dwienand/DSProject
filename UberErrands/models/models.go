@@ -22,6 +22,9 @@ type Provider struct {
         Lat	   float64   `orm:"column(lat);size(10)"`
         Long	   float64   `orm:"column(lng);size(10)"`
         Available  bool      `orm:"column(available)"`
+	Requester  string    `orm:"column(requester);size(50)"`
+        Rlat       float64   `orm:"column(rlat);size(10)"`
+        Rlong      float64   `orm:"column(rlng);size(10)"`
 }
 
 func init() {

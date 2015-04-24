@@ -11,6 +11,7 @@
   </head>
   <body>
     <img src="static/img/UfE.png"><br>
+    <div>I am {{.Requester}}</div><br>
     <div>Service: {{.Service}} </div><br>
     Latitude:
     <span id="lat">{{.Latitude}}</span><br>

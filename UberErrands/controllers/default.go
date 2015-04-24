@@ -44,6 +44,7 @@ type SubmitRequestController struct {
 }
 
 func (c *SubmitRequestController) Post() {
+	c.Data["Requester"] = c.GetString("Requester")
 	c.Data["Service"] = c.GetString("Service")
 	c.Data["Latitude"] = c.Input().Get("Latitude")
 	c.Data["Longitude"] = c.Input().Get("Longitude")
@@ -53,18 +54,28 @@ func (c *SubmitRequestController) Post() {
 	latitude, err := strconv.ParseFloat(latitudestr, 64)
 	longitudestr := c.Data["Longitude"].(string)
 	longitude, err := strconv.ParseFloat(longitudestr, 64)
+	req := c.Data["Requester"].(string)
 
 	o := orm.NewOrm()
 	var user string
 	var nearlat float64
 	var nearlng float64
-	err = o.Raw("select username,lat,lng from (select username, lat, lng, SQRT(POW(69.1*(lat - ?), 2) + POW(69.1 * ( ? -lng) * COS(lat / 57.3), 2)) AS distance FROM provider where service=? HAVING distance < 25 ORDER BY distance) as t", latitude, longitude, service).QueryRow(&user, &nearlat, &nearlng)
-	fmt.Println("user: ", user, nearlng, nearlat, err)
-
+	err = o.Raw("select username,lat,lng from (select username, lat, lng, SQRT(POW(69.1*(lat - ?), 2) + POW(69.1 * ( ? -lng) * COS(lat / 57.3), 2)) AS distance FROM provider where service=? and available=true HAVING distance < 25 ORDER BY distance) as t", latitude, longitude, service).QueryRow(&user, &nearlat, &nearlng)
+	res, err1 := o.Raw("UPDATE provider SET available=false, requester=?, rlat=?, rlng=? where username=?", req, latitude, longitude, user).Exec()
+	fmt.Println("user: ", user, nearlng, nearlat, err, res, err1)
+	
+	
 	c.Data["Provider"] = user
 	c.Data["LatitudeP"] = nearlat
 	c.Data["LongitudeP"] = nearlng
-
+//	var message string	
+//	if err == nil {
+//		message = "No one is available at the moment."
+//	} else {
+//		message = "You will be serviced by " + user + ". This person is at " + nearlat + ", " + nearlng + "."
+//	}
+//	
+//	c.Data["Message"] = message
 	c.TplNames = "RequestSubmitted.tpl"
 }
 
@@ -87,6 +98,7 @@ func (c *AddRequestController) Post() {
 	longitudestr := c.Data["Longitude"].(string)
 	longitude, err := strconv.ParseFloat(longitudestr, 64)
 	avail := c.Data["Available"].(bool)
+	
 	fmt.Println(username)
 	test := models.Provider{Username: username, Service: service, Lat: latitude, Long: longitude, Available: avail}
 
@@ -119,17 +131,30 @@ type MyRequestorController struct {
 }
 
 func (c *MyRequestorController) Get() {
-	var selected bool
+	var available bool
 	username := c.GetString("Username")
 	c.Data["Username"] = username
 	
 	//Check ORM to find if you've been selected
-	selected = false
-	if selected {
-		fmt.Println(selected)
+	
+
+	o := orm.NewOrm()	
+
+	var req string
+	var lat float64
+	var lng float64
+	err := o.Raw("select available from provider where username=?", username).QueryRow(&available)
+
+	if !available {
+		err := o.Raw("select requester, rlat, rlng from provider where username=?", username).QueryRow(&req, &lat, &lng)
+		c.Data["Requestor"] = req
+		c.Data["LatitudeR"] = lat
+		c.Data["LongitudeR"] = lng
+		fmt.Println(available, err)
+		c.TplNames = "selected.tpl"
 	} else {
 		c.TplNames = "NotSelectedyet.tpl"
 		fmt.Println(username)  
 	}
-
+	fmt.Println(username, err)
 }
