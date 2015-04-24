@@ -12,10 +12,16 @@
   </head>
   <body>
     <img src="static/img/UfE.png"><br>
-    <div>Hi, <label id="username">{{.Username}}</label> </div>
+    <div>Hi, <span> id="username">{{.Username}}</span> </div>
     <div>You have registered for providing this service : {{.Service}} </div>
+
      <div id = "selectedOrNot"> </div>
     <div>You are here : </div>
+    <div>Latitude:
+     <span id="lat">{{.Latitude}}</span><br>
+     Longitude:
+    <span id="lon">{{.Longitude}}</span><br>
+    </div>
     <div id="googleMap" style="width:500px;height:380px;"></div>
     <div id = "selectedOrNot"> </div>
 

@@ -1,13 +1,13 @@
 package controllers
 
 import (
-	"strconv"
 	"DSProject/UberErrands/models"
 	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"github.com/astaxie/beego/validation"
 	_ "github.com/go-sql-driver/mysql" // import your used driver
+	"strconv"
 )
 
 type MainController struct {
@@ -47,75 +47,72 @@ func (c *SubmitRequestController) Post() {
 	c.Data["Service"] = c.GetString("Service")
 	c.Data["Latitude"] = c.Input().Get("Latitude")
 	c.Data["Longitude"] = c.Input().Get("Longitude")
-	
+
 	service := c.Data["Service"].(string)
-        latitudestr := c.Data["Latitude"].(string)
-        latitude, err := strconv.ParseFloat(latitudestr,64)
-        longitudestr := c.Data["Longitude"].(string)
-        longitude, err := strconv.ParseFloat(longitudestr,64)
+	latitudestr := c.Data["Latitude"].(string)
+	latitude, err := strconv.ParseFloat(latitudestr, 64)
+	longitudestr := c.Data["Longitude"].(string)
+	longitude, err := strconv.ParseFloat(longitudestr, 64)
 
 	o := orm.NewOrm()
 	var user string
 	var nearlat float64
 	var nearlng float64
 	err = o.Raw("select username,lat,lng from (select username, lat, lng, SQRT(POW(69.1*(lat - ?), 2) + POW(69.1 * ( ? -lng) * COS(lat / 57.3), 2)) AS distance FROM provider where service=? HAVING distance < 25 ORDER BY distance) as t", latitude, longitude, service).QueryRow(&user, &nearlat, &nearlng)
-	fmt.Println("user: ", user, nearlng, nearlat, err) 
-	
+	fmt.Println("user: ", user, nearlng, nearlat, err)
+
 	c.Data["Provider"] = user
-        c.Data["LatitudeP"] = nearlat
-        c.Data["LongitudeP"] = nearlng
-	
+	c.Data["LatitudeP"] = nearlat
+	c.Data["LongitudeP"] = nearlng
+
 	c.TplNames = "RequestSubmitted.tpl"
 }
 
 //AddRequestController
 type AddRequestController struct {
-        beego.Controller
+	beego.Controller
 }
 
 func (c *AddRequestController) Post() {
 	c.Data["Username"] = c.GetString("Username")
-        c.Data["Service"] = c.GetString("Service")
-        c.Data["Latitude"] = c.Input().Get("Latitude")
-        c.Data["Longitude"] = c.Input().Get("Longitude")
+	c.Data["Service"] = c.GetString("Service")
+	c.Data["Latitude"] = c.Input().Get("Latitude")
+	c.Data["Longitude"] = c.Input().Get("Longitude")
 	c.Data["Available"] = true
 
 	username := c.Data["Username"].(string)
 	service := c.Data["Service"].(string)
 	latitudestr := c.Data["Latitude"].(string)
-	latitude, err := strconv.ParseFloat(latitudestr,64)
+	latitude, err := strconv.ParseFloat(latitudestr, 64)
 	longitudestr := c.Data["Longitude"].(string)
-	longitude, err := strconv.ParseFloat(longitudestr,64)
+	longitude, err := strconv.ParseFloat(longitudestr, 64)
 	avail := c.Data["Available"].(bool)
 	fmt.Println(username)
-        test := models.Provider{Username: username, Service: service, Lat: latitude, Long: longitude, Available: avail}
+	test := models.Provider{Username: username, Service: service, Lat: latitude, Long: longitude, Available: avail}
 
-        valid := validation.Validation{}
-        b, err := valid.Valid(&test)
-        if err != nil {
-        }
-        if !b {
-                for _, err := range valid.Errors {
-                        fmt.Println(err.Key, err.Message)
-                }
-        } else {
+	valid := validation.Validation{}
+	b, err := valid.Valid(&test)
+	if err != nil {
+	}
+	if !b {
+		for _, err := range valid.Errors {
+			fmt.Println(err.Key, err.Message)
+		}
+	} else {
 
-                o := orm.NewOrm()
-                o.Using("default")
-                provider := models.Provider{Username: username, Service: service, Lat: latitude, Long: longitude, Available: avail}
-                fmt.Printf(provider.Username)
-                //id, err := o.Insert(&provider)
-               // fmt.Printf("ID: %d, ERR: %v\n", id, err)
-               // this.Redirect("/", 302)
+		o := orm.NewOrm()
+		o.Using("default")
+		provider := models.Provider{Username: username, Service: service, Lat: latitude, Long: longitude, Available: avail}
+		fmt.Printf(provider.Username)
+		//id, err := o.Insert(&provider)
+		// fmt.Printf("ID: %d, ERR: %v\n", id, err)
+		// this.Redirect("/", 302)
 		o.Insert(&provider)
 
 	}
 
-
-
-        c.TplNames = "AddSubmitted.tpl"
+	c.TplNames = "AddSubmitted.tpl"
 }
-
 
 type MyRequestorController struct {
 	beego.Controller
@@ -123,13 +120,14 @@ type MyRequestorController struct {
 
 func (c *MyRequestorController) Get() {
 	var selected bool
+	c.Data["Username"] = c.GetString("Username")
+	//Check ORM to find if you've been selected
 	selected = false
-	if (selected) {
+	if selected {
 		fmt.Println(selected)
 	} else {
 		c.TplNames = "NotSelectedyet.tpl"
-		
+
 	}
 
 }
-
