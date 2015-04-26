@@ -13,7 +13,6 @@ function sendRequest() {
     req.open("GET", "myRequestor?Username="+uname, false);
     req.send(); 
     document.getElementById("selectedOrNot").innerHTML=req.responseText;
-    
 }
 
 window.setInterval(sendRequest, 2000);
