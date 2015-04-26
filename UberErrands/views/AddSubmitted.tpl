@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script type="text/javascript">
+	var latp = {{.LatitudeR}};
+	var lonp = {{.LongitudeP}};
+	</script>
     <script src="/static/js/todo.js" type="text/javascript"></script>
     <script src="/static/js/notifyProvider.js" type="text/javascript"></script>
     <script src="/static/js/markerwithlabel.js" type="text/javascript"></script>

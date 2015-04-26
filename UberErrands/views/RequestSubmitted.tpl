@@ -9,6 +9,10 @@
         div#googleMap { margin: 0 auto 0 auto; }
      </style>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script type="text/javascript">
+	var latp = {{.LatitudeP}};
+	var lonp = {{.LongitudeP}};
+    </script>
     <script src="/static/js/todo.js" type="text/javascript"></script>
     <script src="/static/js/markerwithlabel.js" type="text/javascript"></script>
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
@@ -18,13 +22,13 @@
       <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
       <script src="http://silviomoreto.github.io/bootstrap-select/javascripts/bootstrap-select.js"></script>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
       <script type="text/javascript">
           $(document).ready(function(e) {
               $('.selectpicker').selectpicker();
           });
       </script>
-    <title>Provider</title>
+    <title>Requestor</title>
     <script>
   google.maps.event.addDomListener(window, 'load', initialize);
   </script>
@@ -44,7 +48,7 @@
     Longitude:
     <span id="lon">{{.Longitude}}</span><br>
     <div id="googleMap" style="width:1100px;height:380px;"></div>
-<div> You will be serviced by: {{.Provider}}. He's at {{.LatitudeP}}, {{.LongitudeP}} </div>
+    <div> You will be serviced by: {{.Provider}}. He's at {{.LatitudeP}}, {{.LongitudeP}} </div>
   </div>
   </body>
 </html>
