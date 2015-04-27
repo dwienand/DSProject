@@ -15,6 +15,7 @@ function sendRequest() {
     req.send(); 
     document.getElementById("selectedOrNot").innerHTML=req.responseText;
     var latp = document.getElementById("latR");
+    console.log(latp);
     var lonp = document.getElementById("lonR");
     var reqLatLng = new google.maps.LatLng(latp,lonp);
     var marker2 = new google.maps.Marker({
@@ -25,6 +26,7 @@ function sendRequest() {
        labelStyle: {opacity: 0.75},
        labelVisible: true
      });
+    console.log(marker2);
 }
 
 
@@ -38,7 +40,7 @@ function initialize() {
       zoom:18,
       mapTypeId:google.maps.MapTypeId.ROADMAP
     };
-    map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
       var marker = new google.maps.Marker({
        position: myLatLng,
