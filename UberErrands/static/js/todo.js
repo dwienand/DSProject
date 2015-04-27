@@ -26,7 +26,7 @@ function initialize() {
     var otherLatLng = new google.maps.LatLng(latp,lonp);
     var mapProp = {
       center:new google.maps.LatLng(lat, lon),
-      zoom:13,
+      zoom:18,
       mapTypeId:google.maps.MapTypeId.ROADMAP
     };
     var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);

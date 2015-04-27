@@ -1,7 +1,4 @@
-<span style="color:red;"> <div > You can go ahead and provide service to : {{.Requestor}}</div>
-	<div>Requestor Latitude:
-     <span id="lat">{{.LatitudeR}}</span><br>
-     Requestor Longitude:
-    <span id="lon">{{.LongitudeR}}</span><br>
-    </div>
+<span style="color:red;"> <div >You can provide services to {{.Requestor}} at </div>
+	(<div> <span id="lat">{{.LatitudeR}}</span>, <span id="lon">{{.LongitudeR}}</span><br>
+    </div>)
   </span>
