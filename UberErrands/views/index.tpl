@@ -63,7 +63,7 @@
                         <a href="initiateProvide">Provide</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="static/Team.html">Our Team</a>
                     </li>
                 </ul>
             </div>
