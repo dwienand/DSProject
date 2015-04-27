@@ -20,7 +20,7 @@ function sendRequest() {
     var reqLatLng = new google.maps.LatLng(latp,lonp);
     var marker2 = new google.maps.Marker({
        position: reqLatLng,
-       draggable: true,
+       draggable: false,
        map: map,
        labelAnchor: new google.maps.Point(22, 0),
        labelStyle: {opacity: 0.75},
@@ -44,7 +44,7 @@ function initialize() {
 
       var marker = new google.maps.Marker({
        position: myLatLng,
-       draggable: true,
+       draggable: false,
        map: map,
        labelAnchor: new google.maps.Point(22, 0),
        labelStyle: {opacity: 0.75},

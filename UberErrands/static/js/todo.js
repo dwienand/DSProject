@@ -33,7 +33,7 @@ function initialize() {
 
       var marker = new google.maps.Marker({
        position: myLatLng,
-       draggable: true,
+       draggable: false,
        map: map,
        labelAnchor: new google.maps.Point(22, 0),
        labelStyle: {opacity: 0.75},
@@ -42,7 +42,7 @@ function initialize() {
 
      marker = new google.maps.Marker({
        position: otherLatLng,
-       draggable: true,
+       draggable: false,
        map: map,
        labelAnchor: new google.maps.Point(22, 0),
        labelStyle: {opacity: 0.75},
