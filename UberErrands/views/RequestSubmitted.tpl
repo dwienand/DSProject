@@ -100,7 +100,7 @@
                 You've requested someone to 
                 come here at ( <span id="lat">{{.Latitude}}</span>,<span id="lon">{{.Longitude}}</span> ) for {{.Service}} . <br>
                 </p>
-                <div class="intro-text text-center" style="color:red;"> {{.Provider}} {{.At}} {{.LatitudeP}}, {{.LongitudeP}} {{.Sentence}}  </div>
+                <div class="intro-text text-center" style="color:red;"> {{.Provider}} {{.At}} {{.LatitudeP}} {{.Comma}} {{.LongitudeP}} {{.Sentence}}  </div>
                 </div>
     
      <br>

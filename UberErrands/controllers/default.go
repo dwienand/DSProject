@@ -70,11 +70,12 @@ func (c *SubmitRequestController) Post() {
 		c.Data["LatitudeP"] = nearlat
 		c.Data["LongitudeP"] = nearlng
 		c.Data["At"] = "at ("
+		c.Data["Comma"] = ","
 		c.Data["Sentence"] = ") is coming to help you."
 
 	} else {
 
-		c.Data["Sentence"] = "Sorry! No one is available right now. <br> Please try again later."
+		c.Data["Sentence"] = "Sorry! No one is available right now. Please try again later."
 
 	}
 	c.TplNames = "RequestSubmitted.tpl"
