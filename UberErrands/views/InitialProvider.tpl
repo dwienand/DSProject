@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Request</title>
+    <title>Provide</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -81,7 +81,7 @@
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">
-                        <strong>Request</strong> a service
+                        <strong>Provide</strong> a service
                     </h2>
                     <hr>
                 </div>
