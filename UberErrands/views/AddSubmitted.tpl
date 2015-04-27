@@ -93,14 +93,14 @@
                     </h2>
                     <hr>
                 </div>
-                <div class="col-md-8" id="googleMap">   
+                <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="googleMap"></iframe>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                 <p class="intro-text text-center"> Hi, <span id="uniquename">{{.Username}}</span> <br>
                 You have registered for providing this service : {{.Service}} 
                 You are here :<span id="lat">{{.Latitude}}</span>,<span id="lon">{{.Longitude}}</span><br>
                 </p>
-                <div id = "selectedOrNot"> </div>
+                <div id = "selectedOrNot" class="intro-text text-center"> </div>
                 </div>
     
      <br>
