@@ -86,7 +86,7 @@
                     <hr>
                 </div>
                 <div class="col-md-8">
-                    <img class="img-responsive img-border-left" src="img/slide-2.jpg" alt="">
+                    <img class="img-responsive img-border-left" src="static/img/slide-2.jpg" alt="">
                 </div>
                 <div class="col-md-4">
                 <p class="intro-text text-center"> What do you want to request ? </p><br>
