@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Provide</title>
+    <title>Request Submitted</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
   var latp = {{.LatitudeP}};
   var lonp = {{.LongitudeP}};
     </script>
-    
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script src="/static/js/todo.js" type="text/javascript"></script>
     <script src="/static/js/markerwithlabel.js" type="text/javascript"></script>
     <script>google.maps.event.addDomListener(window, 'load', initialize); </script>
@@ -98,7 +98,7 @@
                 <div class="col-md-6">
                 <p class="intro-text text-center"> Hi, <span id="uniquename">{{.Requester}}</span> <br>
                 You've requested someone to {{.Service}} 
-                You're here (<span id="lat">{{.Latitude}}</span>,<span id="lon">{{.Longitude}}</span>)<br>
+                come here at ( <span id="lat">{{.Latitude}}</span>,<span id="lon">{{.Longitude}}</span> ). <br>
                 </p>
                 <div class="intro-text text-center" style="color:red;"> {{.Provider}} at ( {{.LatitudeP}}, {{.LongitudeP}} ) is coming to help you </div>
                 </div>
