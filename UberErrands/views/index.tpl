@@ -88,13 +88,13 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="img-responsive img-full" src="img/slide-1.jpg" alt="">
+                                <img class="img-responsive img-full" src="static/img/slide-1.jpg" alt="">
                             </div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="img/slide-2.jpg" alt="">
+                                <img class="img-responsive img-full" src="static/img/slide-2.jpg" alt="">
                             </div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="img/slide-3.jpg" alt="">
+                                <img class="img-responsive img-full" src="static/img/slide-3.jpg" alt="">
                             </div>
                         </div>
 
@@ -128,7 +128,7 @@
                         <strong>focus on you</strong>
                     </h2>
                     <hr>
-                    <img class="img-responsive img-border img-left" src="img/intro-pic.jpg" alt="">
+                    <img class="img-responsive img-border img-left" src="static/img/intro-pic.jpg" alt="">
                     <hr class="visible-xs">
                 </div>
             </div>
