@@ -63,19 +63,20 @@ func (c *SubmitRequestController) Post() {
 	err = o.Raw("select username,lat,lng from (select username, lat, lng, SQRT(POW(69.1*(lat - ?), 2) + POW(69.1 * ( ? -lng) * COS(lat / 57.3), 2)) AS distance FROM provider where service=? and available=true HAVING distance < 25 ORDER BY distance) as t", latitude, longitude, service).QueryRow(&user, &nearlat, &nearlng)
 	res, err1 := o.Raw("UPDATE provider SET available=false, requester=?, rlat=?, rlng=? where username=?", req, latitude, longitude, user).Exec()
 	fmt.Println("user: ", user, nearlng, nearlat, err, res, err1)
-	
-	
-	c.Data["Provider"] = user
-	c.Data["LatitudeP"] = nearlat
-	c.Data["LongitudeP"] = nearlng
-//	var message string	
-//	if err == nil {
-//		message = "No one is available at the moment."
-//	} else {
-//		message = "You will be serviced by " + user + ". This person is at " + nearlat + ", " + nearlng + "."
-//	}
-//	
-//	c.Data["Message"] = message
+
+	if nearlat != 0 {
+
+		c.Data["Provider"] = user
+		c.Data["LatitudeP"] = nearlat
+		c.Data["LongitudeP"] = nearlng
+		c.Data["At"] = "at ("
+		c.Data["Sentence"] = ") is coming to help you."
+
+	} else {
+
+		c.Data["Sentence"] = "Sorry! No one is available right now. <br> Please try again later."
+
+	}
 	c.TplNames = "RequestSubmitted.tpl"
 }
 
@@ -98,7 +99,7 @@ func (c *AddRequestController) Post() {
 	longitudestr := c.Data["Longitude"].(string)
 	longitude, err := strconv.ParseFloat(longitudestr, 64)
 	avail := c.Data["Available"].(bool)
-	
+
 	fmt.Println(username)
 	test := models.Provider{Username: username, Service: service, Lat: latitude, Long: longitude, Available: avail}
 
@@ -134,11 +135,10 @@ func (c *MyRequestorController) Get() {
 	var available bool
 	username := c.GetString("Username")
 	c.Data["Username"] = username
-	
-	//Check ORM to find if you've been selected
-	
 
-	o := orm.NewOrm()	
+	//Check ORM to find if you've been selected
+
+	o := orm.NewOrm()
 
 	var req string
 	var lat float64
@@ -154,7 +154,7 @@ func (c *MyRequestorController) Get() {
 		c.TplNames = "selected.tpl"
 	} else {
 		c.TplNames = "NotSelectedyet.tpl"
-		fmt.Println(username)  
+		fmt.Println(username)
 	}
 	fmt.Println(username, err)
 }
