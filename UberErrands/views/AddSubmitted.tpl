@@ -93,7 +93,7 @@
                     </h2>
                     <hr>
                 </div>
-                <div class="col-md-6" id="googleMap" style="width:100%;height:400">   
+                <div class="col-md-6" id="googleMap" style="height:100%;width:100%">   
                 </div>
                 <div class="col-md-6">
                 <p class="intro-text text-center"> Hi, <span id="uniquename">{{.Username}}</span> <br>
