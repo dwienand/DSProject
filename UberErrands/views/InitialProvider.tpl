@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">Uber for Errands</a>
+                 <a class="navbar-brand" href="/">Uber for Errands</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -98,7 +98,7 @@
         </select>   
         <br>
         Name: <input type="text" name="Username">
-        </br>
+        <br></br>
         
         <input type="hidden" name="Latitude" id="lat" >
         <input type="hidden" name="Longitude" id="lon" >
