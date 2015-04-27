@@ -29,6 +29,7 @@
     <![endif]-->
 
     <!-- Custom Scripts -->
+    div#googleMap { margin: 0 auto 0 auto; }
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script type="text/javascript">
     var latp = {{.LatitudeR}};
@@ -98,8 +99,8 @@
                 </div>
                 <div class="col-md-6">
                 <p class="intro-text text-center"> Hi, <span id="uniquename">{{.Username}}</span> <br>
-                You can {{.Service}} 
-                You're here (<span id="lat">{{.Latitude}}</span>,<span id="lon">{{.Longitude}}</span>)<br>
+                You've registered to {{.Service}} <br>
+                You're here : (<span id="lat">{{.Latitude}}</span>,<span id="lon">{{.Longitude}}</span>)<br>
                 </p>
                 <div id = "selectedOrNot" class="intro-text text-center"> </div>
                 </div>
