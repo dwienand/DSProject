@@ -14,9 +14,9 @@ function sendRequest() {
     req.open("GET", "myRequestor?Username="+uname, false);
     req.send(); 
     document.getElementById("selectedOrNot").innerHTML=req.responseText;
-    var latp = document.getElementById("latR");
+    var latp = document.getElementById("latR").innerHTML;
     console.log(latp);
-    var lonp = document.getElementById("lonR");
+    var lonp = document.getElementById("lonR").innerHTML;
     var reqLatLng = new google.maps.LatLng(latp,lonp);
     var marker2 = new google.maps.Marker({
        position: reqLatLng,
