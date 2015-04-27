@@ -30,7 +30,6 @@
 
     <!-- Custom Scripts -->
     <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <script src="/static/js/todo.js" type="text/javascript"></script>
     <script src="/static/js/notifyProvider.js" type="text/javascript"></script>
     <script src="/static/js/markerwithlabel.js" type="text/javascript"></script>
     <script>google.maps.event.addDomListener(window, 'load', initialize);

@@ -26,4 +26,30 @@ function sendRequest() {
      });
 }
 
+
+function initialize() {
+    console.log("initialize map")   
+    var lat = document.getElementById("lat").innerHTML;
+    var lon = document.getElementById("lon").innerHTML; 
+    var myLatLng = new google.maps.LatLng(lat,lon);
+    var mapProp = {
+      center:new google.maps.LatLng(lat, lon),
+      zoom:18,
+      mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+      var marker = new google.maps.Marker({
+       position: myLatLng,
+       draggable: true,
+       map: map,
+       labelAnchor: new google.maps.Point(22, 0),
+       labelStyle: {opacity: 0.75},
+       labelVisible: true
+     });
+
+}
+
+
+
 window.setInterval(sendRequest, 2000);
