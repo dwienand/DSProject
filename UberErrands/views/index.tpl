@@ -13,10 +13,10 @@
     <title>Uber for Errands - So you have time to do what you want to do!</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/business-casual.css" rel="stylesheet">
+    <link href="static/css/business-casual.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -54,13 +54,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">Request</a>
+                        <a href="initiateRequest">Request</a>
                     </li>
                     <li>
-                        <a href="blog.html">Provide</a>
+                        <a href="initiateProvide">Provide</a>
                     </li>
                     <li>
                         <a href="contact.html">Contact</a>
