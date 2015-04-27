@@ -97,8 +97,8 @@
                 </div>
                 <div class="col-md-6">
                 <p class="intro-text text-center"> Hi, <span id="uniquename">{{.Requester}}</span> <br>
-                You've requested someone to {{.Service}} 
-                come here at ( <span id="lat">{{.Latitude}}</span>,<span id="lon">{{.Longitude}}</span> ). <br>
+                You've requested someone to 
+                come here at ( <span id="lat">{{.Latitude}}</span>,<span id="lon">{{.Longitude}}</span> ) for {{.Service}} . <br>
                 </p>
                 <div class="intro-text text-center" style="color:red;"> {{.Provider}} at ( {{.LatitudeP}}, {{.LongitudeP}} ) is coming to help you </div>
                 </div>
