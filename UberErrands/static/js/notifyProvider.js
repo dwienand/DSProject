@@ -1,4 +1,5 @@
 var req;
+var map;
 
 // Sends a new request 
 function sendRequest() {
@@ -37,7 +38,7 @@ function initialize() {
       zoom:18,
       mapTypeId:google.maps.MapTypeId.ROADMAP
     };
-    var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
       var marker = new google.maps.Marker({
        position: myLatLng,
