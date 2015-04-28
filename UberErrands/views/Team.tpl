@@ -106,7 +106,7 @@
                     </h4>
                 </div>
                 <div class="col-sm-3 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <img class="img-responsive" src="static/mayur.jpg" alt="">
                     <h4>Mayur Sharma
                     </h4>
                 </div>
