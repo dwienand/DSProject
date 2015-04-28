@@ -81,11 +81,11 @@
                     </h2>
                     <hr>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <img class="img-responsive img-border-left" src="static/img/minions.jpg" alt="">
                 </div>
-                <div class="col-md-6">
-                    <p> &lt;-- Our Real Team. We made this as our final project for 18842 Distributed Systems at Carnegie Mellon University. As a side note, we are not affiliated with Uber in any way. </p>
+                <div class="col-md-4">
+                    <p> We made this as our final project for 18842 Distributed Systems at Carnegie Mellon University. As a side note, we are not affiliated with Uber in any way. </p>
                 </div>
                 <div class="clearfix"></div>
             </div>
