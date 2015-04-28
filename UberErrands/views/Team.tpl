@@ -85,7 +85,7 @@
                     <img class="img-responsive img-border-left" src="static/img/minions.jpg" alt="">
                 </div>
                 <div class="col-md-4">
-                    <p> We made this as our final project for 18842 Distributed Systems at Carnegie Mellon University. As a side note, we are not affiliated with Uber in any way. </p>
+                    <p> We made this as our final project for 18842 Distributed Systems at Carnegie Mellon University. As a side note, we are not affiliated with Uber in any way (yet!) . </p>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -100,22 +100,22 @@
                     </h2>
                     <hr>
                 </div>
-                <div class="col-sm-3 text-center">
+                <div class="intro-text text-center">
                     <img class="img-responsive" src="http://placehold.it/750x450" alt="">
                     <h3>Luisse Margarette Macasaet
                     </h3>
                 </div>
-                <div class="col-sm-3 text-center">
+                <div class="intro-text text-center">
                     <img class="img-responsive" src="http://placehold.it/750x450" alt="">
                     <h3>Mayur Sharma
                     </h3>
                 </div>
-                <div class="col-sm-3 text-center">
+                <div class="intro-text text-center">
                     <img class="img-responsive" src="http://placehold.it/750x450" alt="">
                     <h3>Xiaokai Sun
                     </h3>
                 </div>
-                <div class="col-sm-3 text-center">
+                <div class="intro-text text-center">
                     <img class="img-responsive" src="http://placehold.it/750x450" alt="">
                     <h3>Dominik Wienand
                     </h3>
