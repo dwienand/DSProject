@@ -159,3 +159,11 @@ func (c *MyRequestorController) Get() {
 	}
 	fmt.Println(username, err)
 }
+
+type MyTeamController struct {
+	beego.Controller
+}
+
+func (c *MyTeamController) Get() {
+	c.TplNames = "Team.tpl"
+}

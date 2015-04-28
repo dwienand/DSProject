@@ -12,10 +12,10 @@
     <title>Our Team!</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/business-casual.css" rel="stylesheet">
+    <link href="static/css/business-casual.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -61,7 +61,7 @@
                         <a href="initiateProvide">Provide</a>
                     </li>
                     <li>
-                        <a href="Team.html">Our Team</a>
+                        <a href="team">Our Team</a>
                     </li>
                 </ul>
             </div>
@@ -82,10 +82,10 @@
                     <hr>
                 </div>
                 <div class="col-md-6">
-                    <img class="img-responsive img-border-left" src="img/slide-2.jpg" alt="">
+                    <img class="img-responsive img-border-left" src="static/img/slide-1.jpg" alt="">
                 </div>
                 <div class="col-md-6">
-                    <p> We made this as our final project for 18842 Distributed Systems at Carnegie Mellon University. As a side note, we are not affiliated with Uber in any way (yet!). </p>
+                    <p> We made this as our final project for 18842 Distributed Systems at Carnegie Mellon University. As a side note, we are not affiliated with Uber in any way. </p>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -137,10 +137,10 @@
         </div>
     </footer>
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="static/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
 
 </body>
 </html>
