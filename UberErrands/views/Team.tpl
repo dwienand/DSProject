@@ -76,8 +76,8 @@
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">
-                        <strong>We Are</strong>
+                    <h2 class="intro-text text-center">OUR
+                        <strong>TEAM</strong>
                     </h2>
                     <hr>
                 </div>
@@ -85,45 +85,13 @@
                     <img class="img-responsive img-border-left" src="static/img/minions.jpg" alt="">
                 </div>
                 <div class="col-md-4">
-                <p>Luisse Margarette Macasaet</p>
-                <p>Mayur Sharma</p>
-                <p>Xiaokai Sun</p>
-                <p>Dominik Wienand</p>
+                <br><br>
+                <p> Luisse Margarette Macasaet</p>
+                <p> Mayur Sharma</p>
+                <p> Xiaokai Sun</p>
+                <p> Dominik Wienand</p>
                 <br>
                 <p> We made this as our final project for 18842 Distributed Systems at Carnegie Mellon University. As a side note, we are not affiliated with Uber in any way (yet!). </p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">Our
-                        <strong>Team</strong>
-                    </h2>
-                    <hr>
-                </div>
-                <div class="col-sm-3 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h4>Luisse Margarette Macasaet
-                    </h4>
-                </div>
-                <div class="col-sm-3 text-center">
-                    <img class="img-responsive" src="static/img/mayur.jpg" alt="">
-                    <h4>Mayur Sharma
-                    </h4>
-                </div>
-                <div class="col-sm-3 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h4>Xiaokai Sun
-                    </h4>
-                </div>
-                <div class="col-sm-3 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h4>Dominik Wienand
-                    </h4>
                 </div>
                 <div class="clearfix"></div>
             </div>
