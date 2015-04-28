@@ -106,7 +106,7 @@
                     </h4>
                 </div>
                 <div class="col-sm-3 text-center">
-                    <img class="img-responsive" src="static/mayur.jpg" alt="">
+                    <img class="img-responsive" src="static/img/mayur.jpg" alt="">
                     <h4>Mayur Sharma
                     </h4>
                 </div>
